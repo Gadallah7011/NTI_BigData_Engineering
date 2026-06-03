@@ -1,0 +1,302 @@
+Lab 1
+
+🏋️ Section 1 — Practice Exercises
+
+Use this dataset for all exercises:
+
+students = spark.createDataFrame([
+    (101, "Ali",     "CS",      88),
+    (102, "Mona",    "CS",      95),
+    (103, "Youssef", "IT",      72),
+    (104, "Nour",    "IT",      81),
+    (105, "Sara",    "AI",      91),
+    (106, "Omar",    "AI",      85)
+], ["student_id", "name", "major", "score"])
+Exercise 1
+
+Find all students in the AI major with scores greater than 90.
+
+Exercise 2
+
+Create a new column called result:
+
+Pass → score ≥ 80
+Fail → otherwise
+Exercise 3
+
+Calculate the average score per major sorted from highest to lowest.
+
+Exercise 4
+
+Count the number of distinct majors.
+
+Exercise 5
+
+Rename major to department and remove student_id.
+
+🏋️ Section 2 — Practice Exercises
+
+Use the same students DataFrame.
+
+Exercise 1
+
+Calculate the running total of scores ordered by student_id.
+
+Exercise 2
+
+Create a column:
+
+above_major_avg
+below_major_avg
+
+based on each student's major average score.
+
+Exercise 3
+
+Find the top 2 students from each major using a window function.
+
+🏋️ Section 3 — Practice Exercises
+
+Use this dataset:
+
+contacts = spark.createDataFrame([
+    ("  ali123@example.com ",),
+    ("sara_99@gmail.com",),
+    ("mona.test@yahoo.com",),
+    (" ahmed2025@outlook.com ",)
+], ["email"])
+Exercise 1
+
+Extract the username and email provider into separate columns.
+
+Exercise 2
+
+Create a column containing only the domain name (gmail, yahoo, outlook, etc.).
+
+Exercise 3
+
+Clean the email column by:
+
+Removing leading/trailing spaces
+Converting to lowercase
+Exercise 4
+
+Count how many emails belong to each provider.
+
+Exercise 5
+
+Replace all digits in usernames with an empty string.
+
+🏋️ Section 4 — Practice Exercises
+
+Use this dataset:
+
+events = spark.createDataFrame([
+    (1, "2025-01-15"),
+    (2, "2025-03-22"),
+    (3, "2025-07-04"),
+    (4, "2025-10-19"),
+    (5, "2025-12-31")
+], ["event_id", "event_date"])
+Exercise 1
+
+Convert event_date into DateType.
+
+Exercise 2
+
+Extract:
+
+Year
+Month
+Day
+
+into separate columns.
+
+Exercise 3
+
+Determine the quarter of each event.
+
+Exercise 4
+
+Calculate how many days remain until the end of the event's year.
+
+Exercise 5
+
+Find all events that occurred in the second half of the year (July–December).
+
+🏋️ Section 5 — Practice Exercises
+
+Use this dataset:
+
+courses = spark.createDataFrame([
+    ("Python", ["Programming", "Beginner", "Data"]),
+    ("Spark", ["Big Data", "Programming"]),
+    ("SQL", ["Database", "Data"]),
+    ("Airflow", ["Workflow", "Automation", "Data"]),
+    ("Linux", ["OS", "Administration"])
+], ["course_name", "topics"])
+Exercise 1
+
+Find all courses that have more than 2 topics.
+
+Exercise 2
+
+Create a column has_data_topic (True/False).
+
+Exercise 3
+
+Use explode() and count how many courses contain each topic.
+
+Exercise 4
+
+Find all courses that contain the topic "Programming".
+
+Exercise 5
+
+Create a column containing the number of topics for each course.
+
+🚀 Capstone Project — Online Learning Platform Analytics
+
+Use the following datasets:
+
+students = spark.createDataFrame([
+    (1, "Ali"),
+    (2, "Mona"),
+    (3, "Sara"),
+    (4, "Omar"),
+    (5, "Nour")
+], ["student_id", "student_name"])
+
+enrollments = spark.createDataFrame([
+    (1, "Python", 88),
+    (1, "SQL", 92),
+    (2, "Python", 95),
+    (2, "Spark", 90),
+    (3, "SQL", 78),
+    (3, "Spark", 85),
+    (4, "Python", 70),
+    (5, "Spark", 98)
+], ["student_id", "course", "score"])
+Part 1 — Data Preparation
+Task 1
+
+Join students with enrollments.
+
+Task 2
+
+Check schema and data quality.
+
+Task 3
+
+Remove duplicate records if present.
+
+Part 2 — Aggregations
+Task 4
+
+Calculate the average score per student.
+
+Task 5
+
+Calculate the average score per course.
+
+Task 6
+
+Find the highest score achieved in each course.
+
+Task 7
+
+Find the student with the highest average score overall.
+
+Part 3 — Window Functions
+Task 8
+
+Rank students within each course.
+
+Task 9
+
+Calculate a running total of scores within each course.
+
+Task 10
+
+Calculate the difference between a student's score and the course average.
+
+Part 4 — Business Rules
+Task 11
+
+Create a performance category:
+
+Excellent → score ≥ 90
+Good → score between 80 and 89
+Needs Improvement → score < 80
+Task 12
+
+Count students in each performance category.
+
+Part 5 — Final Report
+
+Build a final DataFrame containing:
+
+Student Name
+Course
+Score
+Course Rank
+Performance Category
+
+Sort by:
+
+Course
+Course Rank
+
+Display the final report.
+============================================================
+
+Lab 2
+🏋️ Section 1 — Practice Exercises
+Use this dataset for all exercises:
+
+employees = spark.createDataFrame([
+    (1, "Anna",    "Engineering", 95000),
+    (2, "Ben",     "Marketing",   72000),
+    (3, "Clara",   "Engineering", 88000),
+    (4, "Dan",     "HR",          65000),
+    (5, "Eva",     "Marketing",   79000),
+    (6, "Frank",   "Engineering", 91000),
+], ["id", "name", "dept", "salary"])
+Exercise 1: Filter employees in the Engineering department with salary > 90,000.
+Exercise 2: Add a column salary_grade — "High" if salary ≥ 80,000, else "Standard".
+Exercise 3: Find the average salary per department, sorted descending.
+Exercise 4: Count distinct departments.
+Exercise 5: Rename dept to department and drop the id column.
+
+
+🏋️ Section 2 — Practice Exercises
+
+Exercise 1: From the employees DataFrame, find the running total (cumulative sum) of salary ordered by id.  
+Exercise 2: Tag each row with "above_avg" or "below_avg" based on whether the salary is above the group average for their department.  
+Exercise 3: Find the 3 employees with the highest salary in the Engineering department using a window function.
+
+
+
+🏋️ Section 3 — Practice Exercises
+Exercise 1: From the log DataFrame, extract the date portion and the log level into separate columns.
+Exercise 2: Given a column of email addresses, extract the username (before @) and domain (after @).
+Exercise 3: Clean the name column — trim whitespace, convert to proper case, and replace any digits with empty string.
+
+
+🏋️ Section 4 — Practice Exercises
+Exercise 1: From a list of orders with order_date strings, parse the dates and calculate:
+
+Age of the order in days
+Which quarter it belongs to (Q1–Q4)
+The last day of that order's month
+Exercise 2: Find all orders placed on a weekend (Saturday or Sunday).
+
+
+🏋️ Section 5 — Practice Exercises
+Exercise 1: Find all products that have more than 2 tags.
+Exercise 2: Create a new column has_sale_tag (True/False) from the promo_tags column.
+Exercise 3: Use explode() + groupBy() to count how many products each tag appears in.
+
+
+
+

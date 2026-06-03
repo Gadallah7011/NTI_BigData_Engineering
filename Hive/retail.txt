@@ -1,0 +1,10 @@
+1,Delphine,Williams,giza
+2,Harriett,Williams,cairo
+3,Everett,Johnson,alex	
+4,Clement,Williams,giza
+5,Dominique,Davis,giza	
+6,Garry	Wilson,alex
+7,Nannette,Davis,giza	
+8,Iva,Wilson,cairo	
+9,Olivia,Anderson,cairo	
+10,Princess,Anderson,alex

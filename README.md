@@ -25,5 +25,6 @@ This repository contains all tasks, labs, case studies, and practical exercises 
 - ✅ MapReduce
 - ✅ Hive
 - ✅ HBase
+- ✅ Hbase & Hive CaseStudy
 - ✅ Spark
 - 🔄 More technologies will be added as the training progresses
